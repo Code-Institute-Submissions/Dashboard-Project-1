@@ -1,0 +1,86 @@
+html,body {
+    color: white;
+}
+
+#team-selector {
+    color: black;
+}
+
+/* Bar Chart Styles */
+
+
+#gender-trainers rect {
+    fill: #f1c00f;
+}    
+#pokemon-raiders rect {
+    fill: #a80e0e;
+}   
+
+.chart-body g.stack._0  > rect.bar {
+    fill: #f1c00f;
+}
+
+.chart-body g.stack._1  > rect.bar {
+    fill: #a80e0e;
+}
+
+.chart-body g.stack._2  > rect.bar {
+    fill: blue;
+}
+
+#age_within_gender .chart-body g.stack._0 > rect.bar {
+    fill: #f1c00f;
+}
+
+
+.number-box {
+    margin-right: 75px;
+}
+
+.number-box .fa-gender {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.section {
+    border-bottom: 12px double #f1c00f;
+    padding: 10px 0;
+}
+
+.section-paragragh {
+    line-height: 1.2;
+}
+
+.number-display {
+    color: white;
+    display: none;
+}    
+.fa {
+    display: none;
+}
+
+#team-selector {
+    margin-bottom: 40px;
+}
+
+.selector-text {
+    font-weight: bold;
+    margin-left: 180px;
+}
+
+p {
+    padding-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+h1 {
+margin-bottom: 70px;
+
+}

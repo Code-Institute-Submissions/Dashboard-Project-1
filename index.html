@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie-edge">
+     <title>Pokemon DashBoard</title>
+     
+     <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
+     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
+     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+
+     <script type="text/javascript" src="static/js/d3.min.js"></script>
+     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
+     <script type="text/javascript" src="static/js/dc.min.js"></script>
+     <script type="text/javascript" src="static/js/queue.min.js"></script>
+     <script type="text/javascript" src="static/js/graph.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-right">
+      <div class="container-fluid">
+        <div class="navbar-header">
+         <a class="navbar-brand" href="#">Niantic: Pokemon Go</a>
+        </div>
+      </div>
+     </nav>
+     
+     <main>
+       <section class="section">
+          <div class="container">
+          
+            <div class="row">
+               <div class="col-xs-12 col-sm-12">
+           <div id="team-selector"></div>
+           <div class="selector-text">Select Team</div>
+         </div>
+       
+           <div class="logo">
+               <img src="static/img/pk.png" alt="Pokemon Image" height="80" width="700">
+           </div>
+     
+      
+     <!--div class="row">
+           <div class="col-md-6">Roughly 25 Percent Of Men Play Pokemon Go More Than Woman</div>
+           <div class="col-md-6">Equal Amount Of Pokemon Go Raids Completed</div-->
+      
+      <div class="col-xs-12 col-sm-6 col-lg-6">
+          <i class="fa fa-male fa-gender" aria-hidden="true"></i> <span class="number-box" id="percentage-of-male-instinct"></span>
+          <i class="fa fa-female fa-gender" aria-hidden="true"></i> <span class="number-box" id="percentage-of-female-instinct"></span>
+      </div>
+      </div> 
+    </section>  
+      
+    <section class="section">
+       <div class="container">
+       
+    <div class="row">
+       <div class="col-xs-12 col-sm-4 text-center">
+          <p class="section-paragraph">More Men Play Pokemon Go Than Woman By 25 Percent</p>
+       </div>
+       <div class="col-xs-12 col-sm-4 text-center">
+          <p class="section-paragraph">No Significant In Raids Completed By Men And Woman</p>
+       </div>
+       <div class="col-xs-12 col-sm-4 text-center">
+          <p class="section-paragraph">Team Mystic Clear The Most Active Team</p>
+      </div>
+    </div>  
+      
+      <div class="row">
+          <div class="col-xs-12 col-sm-4 text-center" id="gender-trainers" class="custom-chart"></div>
+          <div class="col-xs-12 col-sm-4 text-center" id="pokemon-raiders" class="custom-chart"></div>
+          <div class="col-xs-12 col-sm-4 text-center" id="team-distribution" class="custom-chart"></div>
+      </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+      
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 text-center">    
+           <p class="section-paragraph">Raids Highest When Players Join Game But Numbers Drop After Few Years</p>
+        </div>
+        
+           <div class="col-xs-12 col-sm-12 text-center" id="months_joined">
+      
+      </div>
+     </div>
+    </div>     
+</section>     
+      
+    <section class="section">
+       <div class="container">
+       
+       <div class="row">
+          <div class="col-xs-12 col-sm-12 text-center">       
+           <p class"section-paragraph">Average Age Of Female Players Slightly Higher Than Males</p>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 text-center" id="age_within_gender"></div>
+      </div>
+      
+      </div>
+    </section>
+  </main>
+</body>
+</html>
