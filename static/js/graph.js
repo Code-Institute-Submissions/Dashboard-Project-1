@@ -142,7 +142,7 @@ function show_pokemon_raiders(ndx) {
         .yAxis().ticks(4);
 }
 
-function show_team_distribution(ndx) {
+function show_team_distribution(ndx) {}
 
     function teamByGender(dimension, team){ {
         return 
@@ -164,8 +164,9 @@ function show_team_distribution(ndx) {
             function() {
                 return { total: 0, match: 0 };
             }
-        );
-    }
+        )}
+    };    
+    
 
 
     var dim = ndx.dimension(dc.pluck("sex"));
