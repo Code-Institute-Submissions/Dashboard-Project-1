@@ -1,44 +1,30 @@
 queue()
     .defer(d3.csv, "data/pokemon.csv")
     .await(genGraph);
-
 function genGraph(error, pokemonData) {
     var ndx = crossfilter(pokemonData);
-
     pokemonData.forEach(function(d) {
         d.raids = parseInt(d.raids);
         d.months_joined = parseInt(d["months_joined"]);
         d.age = parseInt(d.age)
     });
-
     show_team_selector(ndx);
-
     show_percent_that_are_instinct(ndx, "Male", "#percentage-of-male-instinct");
     show_percent_that_are_instinct(ndx, "Female", "#percentage-of-female-instinct");
-
     show_gender_trainers(ndx);
     show_pokemon_raiders(ndx);
     show_team_distribution(ndx);
-
     show_months_to_raids_correlation(ndx);
     show_age_within_gender(ndx);
-
-
-
     dc.renderAll();
 }
-
-
 function show_team_selector(ndx) {
     var dim = ndx.dimension(dc.pluck('team'));
     var group = dim.group()
-
     dc.selectMenu("#team-selector")
         .dimension(dim)
         .group(group);
-
 }
-
 function show_percent_that_are_instinct(ndx, sex, element) {
     var percentageThatAreInstinct = ndx.groupAll().reduce(
         function(p, v) {
@@ -63,7 +49,6 @@ function show_percent_that_are_instinct(ndx, sex, element) {
             return { count: 0, are_instinct: 0 };
         }
     );
-
     dc.numberDisplay(element)
         .formatNumber(d3.format(".2%"))
         .valueAccessor(function(d) {
@@ -76,11 +61,9 @@ function show_percent_that_are_instinct(ndx, sex, element) {
         })
         .group(percentageThatAreInstinct);
 }
-
 function show_gender_trainers(ndx) {
     var dim = ndx.dimension(dc.pluck('sex'));
     var group = dim.group();
-
     dc.barChart("#gender-trainers")
         .width(400)
         .height(300)
@@ -93,18 +76,14 @@ function show_gender_trainers(ndx) {
         .xAxisLabel("Gender")
         .yAxis().ticks(20);
 }
-
-
 function show_pokemon_raiders(ndx) {
     var dim = ndx.dimension(dc.pluck('sex'));
-
     function add_item(p, v) {
         p.count++;
         p.total += v.raids;
         p.average = p.total / p.count;
         return p;
     }
-
     function remove_item(p, v) {
         p.count--;
         if (p.count == 0) {
@@ -117,14 +96,10 @@ function show_pokemon_raiders(ndx) {
         }
         return p;
     }
-
     function initialise() {
         return { count: 0, total: 0, average: 0 };
     }
-
     var gameplayByGender = dim.group().reduce(add_item, remove_item, initialise);
-
-
     dc.barChart("#pokemon-raiders")
         .width(400)
         .height(300)
@@ -141,12 +116,9 @@ function show_pokemon_raiders(ndx) {
         .xAxisLabel("Gender")
         .yAxis().ticks(4);
 }
-
 function show_team_distribution(ndx) {
-
     function teamByGender(dimension, team){ 
-        return
-        dimension.group().reduce(
+        return dimension.group().reduce(
             function(p, v) {
                 p.total++;
                 if (v.team == team) {
@@ -165,19 +137,16 @@ function show_team_distribution(ndx) {
                 return { total: 0, match: 0 };
             }
         );
+       }
+       };
    
         
       
     
-
-
     var dim = ndx.dimension(dc.pluck("sex"));
     var instinctByGender = teamByGender(dim, "Instinct");
     var valorByGender = teamByGender(dim, "Valor");
     var mysticByGender = teamByGender(dim, "Mystic");
-
-
-
     let chart = dc.barChart("#team-distribution");
         chart
         .width(400)
@@ -206,14 +175,10 @@ function show_team_distribution(ndx) {
                             return "red";}
                         else if(d.team == "Instinct"){
                         return "yellow";
-
 }
     });
          });
-            }
-
                     function show_months_to_raids_correlation(ndx) {
-
                     var genderColors = d3.scale.ordinal()
                         .domain(["Male", "Female"])
                         .range(["#186CFF", "#F615D4"]);
@@ -222,10 +187,8 @@ function show_team_distribution(ndx) {
                         return [d.months_joined, d.raids, d.team, d.sex];
                     });
                     var experienceRaidsGroup = experienceDim.group();
-
                     var minExperience = eDim.bottom(1)[0].months_joined;
                     var maxExperience = eDim.top(1)[0].months_joined;
-
                     dc.scatterPlot("#months_joined")
                         .width(800)
                         .height(400)
@@ -246,20 +209,17 @@ function show_team_distribution(ndx) {
                         .group(experienceRaidsGroup)
                         .margins({ top: 10, right: 50, bottom: 75, left: 75 });
                 }
-
                 function show_age_within_gender(ndx) {
                     var genderColors = d3.scale.ordinal()
                         .domain(["Male", "Female"])
                         .range(["#186CFF", "#F615D4"]);
                     var dim = ndx.dimension(dc.pluck('sex'));
-
                     function add_item(p, v) {
                         p.count++;
                         p.total += v.age;
                         p.average = p.total / p.count;
                         return p;
                     }
-
                     function remove_item(p, v) {
                         p.count--;
                         if (p.count == 0) {
@@ -272,16 +232,10 @@ function show_team_distribution(ndx) {
                         }
                         return p;
                     }
-
                     function initialise() {
                         return { count: 0, total: 0, average: 0 };
                     }
-
                     var ageByGender = dim.group().reduce(add_item, remove_item, initialise);
-
-
-
-
                     dc.barChart("#age_within_gender")
                         .width(400)
                         .height(300)
