@@ -25,8 +25,12 @@ html,body {
 }
 
 .chart-body g.stack._2  > rect.bar {
-    fill: blue;
+    fill: #186CFF;
 }
+
+/*.dc-legend g.dc-legend-item > rect.translate(0,0){
+    fill: red;
+}*/
 
 #age_within_gender .chart-body g.stack._0 > rect.bar {
     fill: #f1c00f;

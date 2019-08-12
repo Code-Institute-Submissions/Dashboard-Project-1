@@ -145,10 +145,10 @@ function show_team_distribution(ndx) {
             },
             function() {
                 return { total: 0, match: 0 };
-            }
+           }
         );
     }
-}
+
 
 
 
@@ -158,8 +158,10 @@ var instinctByGender = teamByGender(dim, "Instinct");
 var valorByGender = teamByGender(dim, "Valor");
 var mysticByGender = teamByGender(dim, "Mystic");
 
+
 let chart = dc.barChart("#team-distribution")
-chart
+
+    chart
     .width(400)
     .height(300)
     .dimension(dim)
@@ -181,17 +183,17 @@ chart
 chart.on("pretransition", function(chart) {
     chart.selectAll(".dc-legend-item").style("fill", function(d) {
         if (d.team == "Mystic") {
-            return "blue";
+            return "#186CFF";
         }
         else if (d.team == "Valor") {
-            return "red";
+            return "#1f77b4";
         }
         else if (d.team == "Instinct") {
-            return "yellow";
-        }
+            return "#1f77b4";
+            }
+         });
     });
-});
-
+}
 function show_months_to_raids_correlation(ndx) {
     var genderColors = d3.scale.ordinal()
         .domain(["Male", "Female"])
@@ -257,7 +259,7 @@ function show_age_within_gender(ndx) {
     var ageByGender = dim.group().reduce(add_item, remove_item, initialise);
 
     dc.barChart("#age_within_gender")
-        .width(400)
+        .width(250)
         .height(300)
         .margins({ top: 10, right: 50, bottom: 30, left: 50 })
         .dimension(dim)
@@ -272,3 +274,4 @@ function show_age_within_gender(ndx) {
         .xAxisLabel("Gender")
         .yAxis().ticks(4);
 }
+
