@@ -180,19 +180,24 @@ let chart = dc.barChart("#team-distribution")
     .xUnits(dc.units.ordinal)
     .legend(dc.legend().x(330).y(20).itemHeight(15).gap(5))
     .margins({ top: 10, right: 100, bottom: 30, left: 30 });
-chart.on("pretransition", function(chart) {
-    chart.selectAll(".dc-legend-item").style("fill", function(d) {                 
-        if (d.team == "Mystic") {
-            return "#1f77b4";
-        }
-        else if (d.team == "Valor") {
-            return "#ff7f0e";
-        }
-        else if (d.team == "Instinct") {
-            return "#f1c00f";
-            }
-         });
-    });
+    chart.on("pretransition", function(chart){
+chart.selectAll("g.stack rect.bar").style("fill", function(d){
+  if(d.layer=="Instinct")
+      return "f1c00f";
+  if(d.layer=="Valor")
+      return "a80e0e";      
+  else
+    return "186CFF"; 
+      });
+});    
+chart.selectAll("#team-distribution .dc-legend .dc-legend-item rect").style("fill", function(d){
+  if(d.layer=="Instinct")
+      return "f1c00f";
+  if(d.layer=="Valor")
+      return "a80e0e";      
+  else
+    return "186CFF";     
+       });
 }
 
 /*.style("fill", function(d) {

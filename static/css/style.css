@@ -26,10 +26,10 @@ html,body {
 
 .chart-body g.stack._2  > rect.bar {
     fill: #186CFF;
-}
+}*/
 
-#team-distribution .dc-legend .dc-legend-item  > rect {
-    fill: #F63715;
+/*#team-distribution .dc-legend .dc-legend-item  > rect {
+    fill: green;
 }*/
 
 #age_within_gender .chart-body g.stack._0 > rect.bar {
