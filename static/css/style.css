@@ -16,7 +16,7 @@ html,body {
     fill: #a80e0e;
 }   
 
-.chart-body g.stack._0  > rect.bar {
+/*.chart-body g.stack._0  > rect.bar {
     fill: #f1c00f;
 }
 
@@ -28,8 +28,8 @@ html,body {
     fill: #186CFF;
 }
 
-/*.dc-legend g.dc-legend-item > rect.translate(0,0){
-    fill: red;
+#team-distribution .dc-legend .dc-legend-item  > rect {
+    fill: #F63715;
 }*/
 
 #age_within_gender .chart-body g.stack._0 > rect.bar {

@@ -178,22 +178,31 @@ let chart = dc.barChart("#team-distribution")
     })
     .x(d3.scale.ordinal())
     .xUnits(dc.units.ordinal)
-    .legend(dc.legend().x(320).y(20).itemHeight(15).gap(5))
+    .legend(dc.legend().x(330).y(20).itemHeight(15).gap(5))
     .margins({ top: 10, right: 100, bottom: 30, left: 30 });
 chart.on("pretransition", function(chart) {
-    chart.selectAll(".dc-legend-item").style("fill", function(d) {
+    chart.selectAll(".dc-legend-item").style("fill", function(d) {                 
         if (d.team == "Mystic") {
-            return "#186CFF";
+            return "#1f77b4";
         }
         else if (d.team == "Valor") {
-            return "#1f77b4";
+            return "#ff7f0e";
         }
         else if (d.team == "Instinct") {
-            return "#1f77b4";
+            return "#f1c00f";
             }
          });
     });
 }
+
+/*.style("fill", function(d) {
+        var returnColor;
+        if (d ==== 40) {returnColor = "green";
+        } else if (d === 20) { returnColor = "purple";
+        } else if (d === 10) { returnColor = "red"; }
+        return returnColor;
+    });*/
+    
 function show_months_to_raids_correlation(ndx) {
     var genderColors = d3.scale.ordinal()
         .domain(["Male", "Female"])
