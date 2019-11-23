@@ -200,13 +200,7 @@ chart.selectAll("#team-distribution .dc-legend .dc-legend-item rect").style("fil
        });
 }
 
-/*.style("fill", function(d) {
-        var returnColor;
-        if (d ==== 40) {returnColor = "green";
-        } else if (d === 20) { returnColor = "purple";
-        } else if (d === 10) { returnColor = "red"; }
-        return returnColor;
-    });*/
+
     
 function show_months_to_raids_correlation(ndx) {
     var genderColors = d3.scale.ordinal()
