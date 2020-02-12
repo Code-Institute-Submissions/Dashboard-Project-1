@@ -180,26 +180,28 @@ let chart = dc.barChart("#team-distribution")
     .xUnits(dc.units.ordinal)
     .legend(dc.legend().x(330).y(20).itemHeight(15).gap(5))
     .margins({ top: 10, right: 100, bottom: 30, left: 30 });
-    chart.on("pretransition", function(chart){
+   
+    chart.ordinalColors(["#f1c00f", "#a80e0e","#186CFF"])
+
+     chart.on("pretransition", function(chart){
 chart.selectAll("g.stack rect.bar").style("fill", function(d){
   if(d.layer=="Instinct")
-      return "f1c00f";
+      return "#f1c00f";
   if(d.layer=="Valor")
-      return "a80e0e";      
+      return "#a80e0e";      
   else
-    return "186CFF"; 
+    return "#186CFF"; 
       });
 });    
 chart.selectAll("#team-distribution .dc-legend .dc-legend-item rect").style("fill", function(d){
   if(d.layer=="Instinct")
-      return "f1c00f";
+      return "#f1c00f";
   if(d.layer=="Valor")
-      return "a80e0e";      
+      return "#a80e0e";      
   else
-    return "186CFF";     
+    return "#186CFF";     
        });
 }
-
 
     
 function show_months_to_raids_correlation(ndx) {
