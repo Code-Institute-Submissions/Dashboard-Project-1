@@ -159,7 +159,7 @@ var valorByGender = teamByGender(dim, "Valor");
 var mysticByGender = teamByGender(dim, "Mystic");
 
 
-let chart = dc.barChart("#team-distribution")
+let chart = dc.barChart("#team-distribution");
 
     chart
     .width(400)
@@ -182,6 +182,7 @@ let chart = dc.barChart("#team-distribution")
     .margins({ top: 10, right: 100, bottom: 30, left: 30 })
     .ordinalColors(["#f1c00f", "#a80e0e","#186CFF"])
     .useViewBoxResizing(true);
+    };  
 
      chart.on("pretransition", function(chart){
 chart.selectAll("g.stack rect.bar").style("fill", function(d){
@@ -201,7 +202,7 @@ chart.selectAll("#team-distribution .dc-legend .dc-legend-item rect").style("fil
   else
     return "#186CFF";     
        });
-}
+  
 
     
 function show_months_to_raids_correlation(ndx) {

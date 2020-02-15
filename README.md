@@ -8,6 +8,11 @@ of the data to view different information such pokemon teams, gender of players,
 dateset to find out if there is any correlation within the data in regards to age, gender, teams. Also,
 to see if there is a pattern between new players and ones, who have played longer._ 
 
+# Naming And inspiration
+
+_I chose to use pokemon as a theme because I am aware of the game, and its popularity. The name I chose was down to the dashboard
+was to do with the rest of my page, as I felt that it went well with my charts, border styling and finally.
+
 
 
 
@@ -90,6 +95,33 @@ Using terminal on gitpod I checked which of my files were commited by using (git
 be viewed online. I really found this to be much easier with gitpod intergration as I did not need to log on, which before could be difficult as your password your 
 typing does not show up on screen. I did not need to manaully create a repository as this was already done as I created the workspace through github then selecting clone
 which is plugin linking my github with my gitpod._
+
+# DEPLOYMENT
+
+_Using gitpod I pushed my project online, using the terminal I entered "git status", to see which files I had not commited, this showed me the files that were not pushed
+in a red colour, I used "git commit -m "[commit message here]", After this I pushed the project online by using command "git push". This I found very easy to do as my gitpod is    
+connected to my github, I had an issue with my workspace dissapearing, so I went online to github and using the gitpod plugin, It allow me to select the button and push
+my github repository onto gitpod. After this had been done, now I can run my code " index.html" file, by simply entering into the terminal " python3 -m http.server, then clicking
+in the bottom blue toolbar onto the ports section, expose the port 8000, then this will allow it to  be run in a browser to view " index.html"._
+
+# CREDITS
+
+#### MEDIA
+
+_The images used in my index.html were taken online, the logo image on the right "https://www.futuregamereleases.com/wp-content/uploads/2019/08/niantic-banned-accounts-pokemon-go-ingress.png",
+this was found by searching on "https://www.google.com/". The pokemon go logo that is seen on the site page was created by using "https://textcraft.net/style/Textcraft/pokemon",
+this allowed me to enter text and create a logo, all credits go to the sites listed above._
+
+#### CONTENT
+
+_The data set is used which you will find in pokemon.csv was imspired from the site "https://www.kaggle.com/datasets", I chose a random data set and manual created the date
+using as a template, so all the data was created for the purpose of the project and statistics are not based on real life events, credits go to site listed above for the
+inspiration for my data._
+
+#### ACKNOWLEDGEMENTS
+
+_A big thank to all the tutors at code institute support, as I had many difficulty with what I was trying to accomplish, many times I did resolve the issue myself before support
+got back to me. However, without the support I would not been able to complete this, so big thank you to them for the help they have provided._
 
 # Created and Edited by Michael Singh
 
