@@ -11,7 +11,7 @@ to see if there is a pattern between new players and ones, who have played longe
 # Naming And inspiration
 
 _I chose to use pokemon as a theme because I am aware of the game, and its popularity. The name I chose was down to the dashboard
-was to do with the rest of my page, as I felt that it went well with my charts, border styling and finally.
+was to do with the rest of my page, as I felt that it went well with my charts, border styling and finally._
 
 
 
@@ -20,7 +20,7 @@ was to do with the rest of my page, as I felt that it went well with my charts, 
 _I chose to give my page a dropdown to allow easy selection of date by pokemon teams. This way I felt I could
 filter the data to show if there is any correlation between the teams players have chosen. I did this by using
 a function called show_team_selector and picking team from my dataset. This was made easier by creating an id
-in my index.html which later I could use in my (dc.selectMenu("#team-selector").
+in my index.html which later I could use in my (dc.selectMenu("#team-selector")._
 
 
 
@@ -38,7 +38,7 @@ _For this project I trialled a number of backgrounds but I decided to go with a 
 it would show off the colours of my chart well. I did use a pokemon logo with an (image src=) to display a logo
 but had some issues with pixelation. To resolve this I right clicked the image and used page inspect so I can
 target the image width and height. On this occasion, I felt as it was the only real image others were charts 
-created by my (graph.js) file, I adjusted my image so it would show clearly.
+created by my (graph.js) file, I adjusted my image so it would show clearly._
 
 
 
