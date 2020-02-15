@@ -179,9 +179,9 @@ let chart = dc.barChart("#team-distribution")
     .x(d3.scale.ordinal())
     .xUnits(dc.units.ordinal)
     .legend(dc.legend().x(330).y(20).itemHeight(15).gap(5))
-    .margins({ top: 10, right: 100, bottom: 30, left: 30 });
-   
-    chart.ordinalColors(["#f1c00f", "#a80e0e","#186CFF"])
+    .margins({ top: 10, right: 100, bottom: 30, left: 30 })
+    .ordinalColors(["#f1c00f", "#a80e0e","#186CFF"])
+    .useViewBoxResizing(true);
 
      chart.on("pretransition", function(chart){
 chart.selectAll("g.stack rect.bar").style("fill", function(d){

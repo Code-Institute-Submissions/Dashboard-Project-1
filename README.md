@@ -61,7 +61,10 @@ was being using in to colour the charts. I used to (rect class=) but the problem
 would be same colour, so what I decided to do was use my id I had created and to use if statements as the three
 teams in my chart we showing as layers so if one layer was equal to team name then it would use the colour. Also,
 this was not easy as I had to research and find out that the colour cannot be changed with normal css eg (color: red;)
-as I had to use fill to change colour of my chart within the function I created._
+as I had to use fill to change colour of my chart within the function I created.This was very challenging so I chose to
+use "chart.ordinalColors(["#f1c00f", "#a80e0e","#186CFF"])", which did help me to finally acheive the result I wanted,
+allowing my colours to reflect when Hover over the legends._
+
 
 
 #### HTML Validator 
